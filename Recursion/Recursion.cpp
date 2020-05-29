@@ -1,5 +1,7 @@
 #include <iostream>
+#include <ostream>
 #include <string>
+
 
 // Add any extra import statements you may need here
 
@@ -23,7 +25,7 @@ string findEncryptedWord(string s) {
 	string result;
 	if(s.size() % 2 == 0)
 	{
-		result = s.substr(s.size() / 2 - 1,1);
+		result = s.substr(0,s.size() / 2 - 1);
 		str1 = s.substr(0,s.size() / 2 - 1);
 		str2 = s.substr(s.size()/ 2 ,s.size());
 	}
@@ -35,8 +37,19 @@ string findEncryptedWord(string s) {
 	}
 	result += cypher(str1,str1.at((str1.size()-1)/2)) + cypher(str2,str2.at((str2.size()-1)/2));
 
-	return result;
+	return str1;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // These are the tests we use to determine if the solution is correct.
 // You can add your own at the bottom, but they are otherwise not editable!
